@@ -388,6 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1059579325}
   speed: 3.5
+  runSpeed: 11
 --- !u!4 &1059579327
 Transform:
   m_ObjectHideFlags: 0

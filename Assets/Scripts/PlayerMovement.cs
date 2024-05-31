@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 0.5f;
+    public float runSpeed = 1.0f;
 
     private void Update()
     {
@@ -16,7 +17,11 @@ public class PlayerMovement : MonoBehaviour
 
         // 이동 방향 설정
         Vector3 move = transform.right * x + transform.forward * y;
+
+        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        float currentSpeed = isRunning ? runSpeed : speed;
+
         // 이동 속도 설정
-        controller.Move(move * speed * Time.deltaTime);
+        controller.Move(move * currentSpeed * Time.deltaTime);
     }
 }
